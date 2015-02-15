@@ -24,7 +24,13 @@ var CustomerApp = CustomerApp ||{};
 		addCustomer : function(){
 			var _this = this;
 			CustomerApp.Customers.create(_this.fetchCustomer());
-			this.render();
+			this.reinitControls();
+		},
+
+		reinitControls:function(){
+			this.cusName.val('');
+			this.age.val('');
+			this.city.val('');	
 		},
 
 		fetchCustomer : function(){

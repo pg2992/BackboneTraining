@@ -46,7 +46,18 @@ var CustomerApp = CustomerApp ||{};
 		},
 		deleteCustomer : function(){
 			this.model.destroy();
+		},
+		save : function(){
+			var name = $('.editName',this.$el).val();
+			var age = $('.editAge',this.$el).val();
+			var city = $('.editCity',this.$el).val();
+
+			this.model.set({Name:name,Age:age,City:city});
+			this.model.save();
+			this.templateName = "CustomerDetailsTemplate";
+			this.render();		
 		}
+
 
 
 	})
